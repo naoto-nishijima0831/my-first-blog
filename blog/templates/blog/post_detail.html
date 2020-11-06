@@ -4,7 +4,8 @@
     <p>detail</p>
     <div>
         <p>published: {{ post.published_date }}</p>
-        <p>title: {{ post.title }}</a></p>
+        <p>title: {{ post.title }}</p>
         <p>text: {{ post.text|linebreaksbr }}</p>
     </div>
+    <a href="{% url 'post_new' %}">Form</a>
 {% endblock %}
