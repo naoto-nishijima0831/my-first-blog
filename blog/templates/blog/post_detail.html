@@ -7,5 +7,8 @@
         <p>title: {{ post.title }}</p>
         <p>text: {{ post.text|linebreaksbr }}</p>
     </div>
-    <a href="{% url 'post_new' %}">Form</a>
+    <div>
+        <p><a href="{% url 'post_new' %}">Form</a></p>
+        <p><a href="{% url 'post_edit' pk=post.pk %}">Edit</a></p>
+    </div>
 {% endblock %}
