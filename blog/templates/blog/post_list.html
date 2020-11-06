@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Blog</title>
-</head>
-<body>
-    <p>post_list_view</p>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <p>list</p>
     {% for post in posts %}
         <div>
             <p>published: {{ post.published_date }}</p>
-            <p><a href="">{{ post.title }}</a></p>
+            <p><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
